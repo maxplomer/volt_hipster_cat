@@ -6,7 +6,11 @@ module Main
       # Add code for when the index view is loaded
       Document.ready? do
         alert "document is ready to go!"
+        Element.find('#clickme').on :click do
+          alert "The header was clicked!"
+        end
       end
+      
     end
 
     def about
