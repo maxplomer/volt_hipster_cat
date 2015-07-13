@@ -1,8 +1,12 @@
 # By default Volt generates this controller for your Main component
+require 'opal-jquery'
 module Main
   class MainController < Volt::ModelController
     def index
       # Add code for when the index view is loaded
+      Document.ready? do
+        alert "document is ready to go!"
+      end
     end
 
     def about

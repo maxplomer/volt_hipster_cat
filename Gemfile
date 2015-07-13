@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'opal-jquery'
+
 gem 'volt', '0.9.4'
 
 # volt uses mongo as the default data store.
