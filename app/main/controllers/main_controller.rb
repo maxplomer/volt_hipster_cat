@@ -17,6 +17,10 @@ module Main
       page._new_todo = ''
     end
 
+    def login_to_demo_account
+      Volt.login('hello@world.com', 'helloworld')
+    end
+
     def about
       # Add code for when the about view is loaded
     end
