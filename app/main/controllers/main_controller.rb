@@ -2,6 +2,8 @@
 require 'opal-jquery'
 module Main
   class MainController < Volt::ModelController
+    model :store
+
     def index
       # Add code for when the index view is loaded
       Document.ready? do
@@ -12,7 +14,7 @@ module Main
     end
 
     def add_todo
-      page._todos << { name: page._new_todo }
+      _todos << { name: page._new_todo }
       page._new_todo = ''
     end
 
