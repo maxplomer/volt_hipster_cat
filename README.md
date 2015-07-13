@@ -1,4 +1,8 @@
-# Place your app's docs here.
+# Volt Hipster Cat
 
-## New to Volt?
-Be sure to read the volt docs at http://docs.voltframework.com
+### Setup
+
+$ volt new volt_hipster_cat
+
+Had to fix error "Unexpected error while processing request: wrong number of arguments (2 for 1)"
+by lowering the websocket-driver version
