@@ -3,7 +3,13 @@
 
 <:Body>
 
-  <a e-click="login_to_demo_account"href="#">sign in as demo account</a>
+  {{ if page._logged_in }}
+    You Are Logged In
+  {{ else }}
+    <a e-click="login_to_demo_account" href="#">Login As Demo Account</a><br><br>
+    &nbsp;&nbsp;&nbsp;or<br><br>
+    <a e-click="create_new_account" href="#">Create New Account</a><br><br>
+  {{ end }}
 
   <table class="todo-table">
     {{ page._todos.each do |todo| }}
