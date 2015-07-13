@@ -8,15 +8,7 @@ module Main
         Element.find('#clickme').on :click do
           alert "The header was clicked!"
         end
-
       end
-      page._logged_in = false
-      # if Volt.current_user.email.length > 0
-      #   page._logged_in = true
-      # else
-      #   page._logged_in = false
-      # end
-      #
     end
 
     def add_todo
