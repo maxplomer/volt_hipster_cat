@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 gem 'opal-jquery'
 
 gem 'volt', '0.9.4'
