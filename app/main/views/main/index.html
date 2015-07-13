@@ -2,9 +2,7 @@
   Home
 
 <:Body>
-
-
-  {{ if Volt.fetch_current_user  }}
+  {{ if Volt.fetch_current_user }}
     You Are Logged In
 
     <table class="todo-table">
@@ -21,11 +19,10 @@
         <input class="form-control" type="text" value="{{ page._new_todo }}" />
       </div>
     </form>
-
-
   {{ else }}
     <a e-click="login_to_demo_account" href="#">Login As Demo Account</a><br><br>
+    
     &nbsp;&nbsp;&nbsp;or<br><br>
+    
     <a e-click="create_new_account" href="#">Create New Account</a><br><br>
   {{ end }}
-
