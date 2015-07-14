@@ -15,7 +15,6 @@ module Main
 
     def add_game
       Volt.current_user.id.then do |result|
-
         new_game = Game.new(
           name: page._new_game,
           user_id: result,
@@ -23,7 +22,9 @@ module Main
         )
 
         store._games << new_game
-        City.create_default_cities(new_game.id)
+        City.create_default_cities(new_game.id).each do |new_city|
+          store._cities << new_city
+        end
 
         page._new_game = ''
       end

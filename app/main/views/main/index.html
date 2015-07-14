@@ -7,6 +7,7 @@
       You are Playing a game <a href="#" e-click="page._playing_a_game = false">Stop</a><br><br>
       {{ if page._prompt_user_for_input }}
         Current time is {{ page._game.print_time }}<br><br> 
+        Cities are {{ page._game.cities.map(&:_name).join(', ') }}<br><br>
         Do you want to:
         <a href="#">get a job</a>,
         <a href="#">adopt a cat</a>, or
