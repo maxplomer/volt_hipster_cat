@@ -15,7 +15,11 @@ module Main
 
     def add_game
       Volt.current_user.id.then do |result|
-        _games << { name: page._new_game, user_id: result }
+        _games << { 
+          name: page._new_game,
+          user_id: result,
+          current_time: Time.now
+        }
         page._new_game = ''
       end
     end

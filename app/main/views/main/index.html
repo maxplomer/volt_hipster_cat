@@ -6,11 +6,12 @@
     You Are Logged In<br><br>
 
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-8">
 
         <table class="game-table">
           <tr>
             <th>Game Name</th>
+            <th>Current Time</th>
             <th></th>
             <th></th>
           </tr>
@@ -18,6 +19,7 @@
           {{ Volt.current_user.games.each do |game| }}
             <tr>
               <td>{{ game._name }}</td>
+              <td>{{ game._current_time }}</td>
               <td><a e-click="game.play">play</a></td>
               <td><a e-click="game.destroy">delete</a></td>
             </tr>
