@@ -4,8 +4,14 @@
 <:Body>
   {{ if Volt.current_user }}
     {{ if page._playing_a_game }}
-      You are Playing a game <a href="#" e-click="page._playing_a_game = false">Stop</a>
-
+      You are Playing a game <a href="#" e-click="page._playing_a_game = false">Stop</a><br><br>
+      {{ if page._prompt_user_for_input }}
+        Current time is {{ page._game._current_time }}<br><br> 
+        Do you want to:
+        <a href="#">get a job</a>,
+        <a href="#">adopt a cat</a>, or
+        <a href="#">move</a> ?
+      {{ end }}
     {{ else }}
       You Are Logged In<br><br>
 
