@@ -15,13 +15,17 @@ module Main
 
     def add_game
       Volt.current_user.id.then do |result|
-        _games << { 
+
+        new_game = Game.new(
           name: page._new_game,
           user_id: result,
           current_time: Time.now
-        }
+        )
+
+        store._games << new_game
+        City.create_default_cities(new_game.id)
+
         page._new_game = ''
-        City.create_default_cities(1234)
       end
     end
 
