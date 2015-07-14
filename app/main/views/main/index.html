@@ -8,25 +8,27 @@
     <div class="row">
       <div class="col-md-4">
 
-        <table class="todo-table">
+        <table class="game-table">
           <tr>
             <th>Game Name</th>
             <th></th>
             <th></th>
           </tr>
-          {{ Volt.current_user.todos.each do |todo| }}
+
+          {{ Volt.current_user.games.each do |game| }}
             <tr>
-              <td>{{ todo._name }}</td>
-              <td><a e-click="todo.play">play</a></td>
-              <td><a e-click="todo.destroy">delete</a></td>
+              <td>{{ game._name }}</td>
+              <td><a e-click="game.play">play</a></td>
+              <td><a e-click="game.destroy">delete</a></td>
             </tr>
           {{ end }}
+
         </table>
 
-        <form e-submit="add_todo" role="form">
+        <form e-submit="add_game" role="form">
           <div class="form-group">
             <label>New Game Name</label>
-            <input class="form-control" type="text" value="{{ page._new_todo }}" />
+            <input class="form-control" type="text" value="{{ page._new_game }}" />
           </div>
         </form>
 

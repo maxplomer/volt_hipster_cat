@@ -13,10 +13,10 @@ module Main
       # end
     end
 
-    def add_todo
+    def add_game
       Volt.current_user.id.then do |result|
-        _todos << { name: page._new_todo, user_id: result }
-        page._new_todo = ''
+        _games << { name: page._new_game, user_id: result }
+        page._new_game = ''
       end
     end
 
