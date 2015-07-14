@@ -11,9 +11,6 @@ module Main
       #     alert "The header was clicked!"
       #   end
       # end
-      Volt.current_user.id.then do |result|
-        page._current_user_id = result
-      end
     end
 
     def add_todo
