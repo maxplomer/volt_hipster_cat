@@ -20,7 +20,9 @@
       {{ if page._adopting_a_cat }}
         Adopting a cat in {{ page._game._location }}
         <br><br>
-        {{ page._game.current_city._name }}
+        {{ page._game.current_city.cats.each do |cat| }}
+          {{ cat._name }}<br>
+        {{ end }}
 
 
 
