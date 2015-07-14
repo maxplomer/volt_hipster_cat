@@ -9,4 +9,6 @@ class User < Volt::User
   validate login_field, unique: true, length: 8
   validate :email, email: true
 
+  has_many :todos
+
 end
