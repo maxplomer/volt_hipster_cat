@@ -9,7 +9,6 @@
         Current time is {{ page._game.print_time }}<br><br> 
         Current location is {{ page._game._location }}<br><br>
         Cities are {{ page._game.cities.map(&:_name).join(', ') }}<br><br>
-
         Cats in suburbs are {{ page._game.cities.first.cats.map(&:_name).join(', ') }}<br><br>
         Do you want to:
         <a href="#">get a job</a>,

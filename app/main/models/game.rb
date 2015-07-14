@@ -1,5 +1,6 @@
 class Game < Volt::Model
   has_many :cities
+  has_many :cats
 
   def play(page)
     page._playing_a_game = true
