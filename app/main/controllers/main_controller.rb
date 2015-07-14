@@ -14,8 +14,10 @@ module Main
     end
 
     def add_todo
-      _todos << { name: page._new_todo, creator: 'steve' }
-      page._new_todo = ''
+      Volt.current_user.id.then do |result|
+        _todos << { name: page._new_todo, user_id: result }
+        page._new_todo = ''
+      end
     end
 
     def login_to_demo_account
