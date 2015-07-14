@@ -18,7 +18,8 @@ module Main
         new_game = Game.new(
           name: page._new_game,
           user_id: result,
-          current_time: Time.now
+          current_time: Time.now,
+          location: 'suburbs'
         )
 
         store._games << new_game
