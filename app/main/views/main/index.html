@@ -20,15 +20,18 @@
         <a href="#">move</a> ?
       {{ end }}
       {{ if page._adopting_a_cat }}
-        Adopting a cat in {{ page._game._location }}
-        <br><br>
-        We have the following cats:<br>
-        {{ page._game.current_city.cats.each do |cat| }}
-          {{ cat._name }} &nbsp;&nbsp;&nbsp; <a e-click="page._game.adopt_this_cat(cat, page)" href="#">adopt</a><br>
+        {{ unless page._taking_cat_adoption_test }}
+          Adopting a cat in {{ page._game._location }}
+          <br><br>
+          We have the following cats:<br>
+          {{ page._game.current_city.cats.each do |cat| }}
+            {{ cat._name }} &nbsp;&nbsp;&nbsp; <a e-click="page._game.adopt_this_cat(cat, page)" href="#">adopt</a><br>
+          {{ end }}
+        {{ else }}
+          <!-- take the cat test -->
+          YOU ARE NOW TAKING THE CAT TEST
+
         {{ end }}
-
-
-
       {{ end }}
     {{ else }}
       You Are Logged In<br><br>
