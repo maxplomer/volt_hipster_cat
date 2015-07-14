@@ -3,39 +3,44 @@
 
 <:Body>
   {{ if Volt.current_user }}
-    You Are Logged In<br><br>
+    {{ if page._playing_a_game }}
+      You are Playing a game <a href="#" e-click="page._playing_a_game = false">Stop</a>
 
-    <div class="row">
-      <div class="col-md-8">
+    {{ else }}
+      You Are Logged In<br><br>
 
-        <table class="game-table">
-          <tr>
-            <th>Game Name</th>
-            <th>Current Time</th>
-            <th></th>
-            <th></th>
-          </tr>
+      <div class="row">
+        <div class="col-md-8">
 
-          {{ Volt.current_user.games.each do |game| }}
+          <table class="game-table">
             <tr>
-              <td>{{ game._name }}</td>
-              <td>{{ game._current_time }}</td>
-              <td><a e-click="game.play">play</a></td>
-              <td><a e-click="game.destroy">delete</a></td>
+              <th>Game Name</th>
+              <th>Current Time</th>
+              <th></th>
+              <th></th>
             </tr>
-          {{ end }}
 
-        </table>
+            {{ Volt.current_user.games.each do |game| }}
+              <tr>
+                <td>{{ game._name }}</td>
+                <td>{{ game._current_time }}</td>
+                <td><a e-click="game.play(page)">play</a></td>
+                <td><a e-click="game.destroy">delete</a></td>
+              </tr>
+            {{ end }}
 
-        <form e-submit="add_game" role="form">
-          <div class="form-group">
-            <label>New Game Name</label>
-            <input class="form-control" type="text" value="{{ page._new_game }}" />
-          </div>
-        </form>
+          </table>
 
+          <form e-submit="add_game" role="form">
+            <div class="form-group">
+              <label>New Game Name</label>
+              <input class="form-control" type="text" value="{{ page._new_game }}" />
+            </div>
+          </form>
+
+        </div>
       </div>
-    </div>
+    {{ end }}
   {{ else }}
     <a e-click="login_to_demo_account" href="#">Login As Demo Account</a><br><br>
     

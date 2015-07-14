@@ -1,5 +1,6 @@
 class Game < Volt::Model
-  def play
-    self._name += 'PLAYED'
+  def play(page)
+    #self._name += 'PLAYED'
+    page._playing_a_game = true
   end
 end
