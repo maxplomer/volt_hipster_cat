@@ -22,9 +22,7 @@ module Main
         )
 
         store._games << new_game
-        City.create_default_cities(new_game.id).each do |new_city|
-          store._cities << new_city
-        end
+        City.create_default_cities(store, new_game.id)
 
         page._new_game = ''
       end
