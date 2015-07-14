@@ -17,7 +17,6 @@ class Game < Volt::Model
     page._prompt_user_for_input = true
   end
 
-
   def game_over?
     false
   end
