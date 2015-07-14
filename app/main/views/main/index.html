@@ -3,7 +3,7 @@
 
 <:Body>
   {{ if Volt.current_user }}
-    You Are Logged In<br><br>
+    You Are Logged In<br><br>{{page._current_user_id}}
 
     <div class="row">
       <div class="col-md-4">
@@ -16,12 +16,14 @@
             <th></th>
           </tr>
           {{ _todos.each do |todo| }}
-            <tr>
-              <td>{{ todo._name }}</td>
-              <td>{{ todo._user_id }}</td>
-              <td><a e-click="todo.play">play</a></td>
-              <td><a e-click="todo.destroy">delete</a></td>
-            </tr>
+            {{ if todo._user_id == page._current_user_id}}
+              <tr>
+                <td>{{ todo._name }}</td>
+                <td>{{ todo._user_id }}</td>
+                <td><a e-click="todo.play">play</a></td>
+                <td><a e-click="todo.destroy">delete</a></td>
+              </tr>
+            {{ end }}
           {{ end }}
         </table>
 

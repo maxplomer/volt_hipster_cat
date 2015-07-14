@@ -6,10 +6,13 @@ module Main
 
     def index
       # Add code for when the index view is loaded
-      Document.ready? do
-        Element.find('#clickme').on :click do
-          alert "The header was clicked!"
-        end
+      # Document.ready? do
+      #   Element.find('#clickme').on :click do
+      #     alert "The header was clicked!"
+      #   end
+      # end
+      Volt.current_user.id.then do |result|
+        page._current_user_id = result
       end
     end
 
