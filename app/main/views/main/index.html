@@ -10,6 +10,8 @@
         <br><br> 
         Current location is {{ page._game._location }}
         <br><br>
+        Current cats: {{ page._game.cats.map(&:_name).join(', ') }}
+        <br><br>
         Cities are {{ page._game.cities.map(&:_name).join(', ') }}
         <br><br>
         Do you want to:
@@ -20,8 +22,9 @@
       {{ if page._adopting_a_cat }}
         Adopting a cat in {{ page._game._location }}
         <br><br>
+        We have the following cats:<br>
         {{ page._game.current_city.cats.each do |cat| }}
-          {{ cat._name }}<br>
+          {{ cat._name }} &nbsp;&nbsp;&nbsp; <a e-click="page._game.adopt_this_cat(cat)" href="#">adopt</a><br>
         {{ end }}
 
 
