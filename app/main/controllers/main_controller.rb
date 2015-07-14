@@ -14,7 +14,7 @@ module Main
     end
 
     def add_todo
-      _todos << { name: page._new_todo }
+      _todos << { name: page._new_todo, creator: 'steve' }
       page._new_todo = ''
     end
 
