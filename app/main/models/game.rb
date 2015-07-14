@@ -31,7 +31,7 @@ class Game < Volt::Model
     page._adopting_a_cat = true
   end
 
-  def adopt_this_cat(cat)
+  def adopt_this_cat(cat, page)
     cat_dup = cat.dup
     cat.destroy
     _cats << { name: cat._name, game_id: self.id }

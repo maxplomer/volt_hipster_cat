@@ -24,7 +24,7 @@
         <br><br>
         We have the following cats:<br>
         {{ page._game.current_city.cats.each do |cat| }}
-          {{ cat._name }} &nbsp;&nbsp;&nbsp; <a e-click="page._game.adopt_this_cat(cat)" href="#">adopt</a><br>
+          {{ cat._name }} &nbsp;&nbsp;&nbsp; <a e-click="page._game.adopt_this_cat(cat, page)" href="#">adopt</a><br>
         {{ end }}
 
 
