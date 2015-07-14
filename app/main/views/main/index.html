@@ -14,8 +14,16 @@
         <br><br>
         Do you want to:
         <a href="#">get a job</a>,
-        <a href="#">adopt a cat</a>, or
+        <a e-click="page._game.adopt_a_cat(page)" href="#">adopt a cat</a>, or
         <a href="#">move</a> ?
+      {{ end }}
+      {{ if page._adopting_a_cat }}
+        Adopting a cat in {{ page._game._location }}
+        <br><br>
+        {{ page._game.current_city._name }}
+
+
+
       {{ end }}
     {{ else }}
       You Are Logged In<br><br>

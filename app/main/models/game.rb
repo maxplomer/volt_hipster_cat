@@ -15,10 +15,20 @@ class Game < Volt::Model
   def play_round(page)
     #page._current_time = self.current_time
     page._prompt_user_for_input = true
+    page._adopting_a_cat = false
   end
 
   def game_over?
     false
+  end
+
+  def current_city
+    self.cities.where(name: self._location).first
+  end
+
+  def adopt_a_cat(page)
+    page._prompt_user_for_input = false
+    page._adopting_a_cat = true
   end
 
   # def game_over
