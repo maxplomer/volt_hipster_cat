@@ -22,5 +22,9 @@ class Game < Volt::Model
   # def game_over
   # end
 
+  def print_time
+    x = self._current_time
+    "#{x.month}/#{x.day}/#{x.year}"
+  end
 
 end
