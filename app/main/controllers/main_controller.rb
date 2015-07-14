@@ -21,6 +21,7 @@ module Main
           current_time: Time.now
         }
         page._new_game = ''
+        City.create_default_cities(1234)
       end
     end
 
