@@ -123,4 +123,14 @@ class Cat < Volt::Model
     end
   end
 
+  def get_sum
+    self._name.gsub(' ','').chars.map(&:my_ord).inject(:+)
+  end
+
+end
+
+class String
+  def my_ord
+    self.downcase.ord - 96
+  end
 end
