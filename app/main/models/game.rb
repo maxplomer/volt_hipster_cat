@@ -33,6 +33,7 @@ class Game < Volt::Model
 
   def adopt_this_cat(cat, page)
     page._taking_cat_adoption_test = true
+    page._chosen_cat = cat
     #cat_dup = cat.dup
     #take_cat_adoption_test(cat, page)
     # if take_cat_adoption_test(cat, page)
