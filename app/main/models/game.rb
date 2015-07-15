@@ -43,11 +43,19 @@ class Game < Volt::Model
     if cat_sum.to_i == solution_cat_sum
       _cats << { name: cat._name, game_id: self.id }
       cat.destroy
+      page._taking_cat_adoption_test = false
+      page._adopting_a_cat = false
+      page._prompt_user_for_input = true
     else
-      page._show_cat_adoption_failure = true
+      page._failed_cat_test = true
     end
 
     page._cat_sum = ''
+
+  end
+
+  def click_ok_failed_cat_test(page)
+    page._failed_cat_test = false
     page._taking_cat_adoption_test = false
     page._adopting_a_cat = false
     page._prompt_user_for_input = true

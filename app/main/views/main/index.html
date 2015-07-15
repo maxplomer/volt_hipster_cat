@@ -29,18 +29,22 @@
           {{ end }}
         {{ else }}
           <!-- take the cat test -->
-          To adopt "{{ page._chosen_cat._name }}" please sum the number of each letter that corresponds to its order in the alphabet
+          {{ unless page._failed_cat_test }}
+            To adopt "{{ page._chosen_cat._name }}" please sum the number of each letter that corresponds to its order in the alphabet
 
 
-          <form e-submit="page._game.submit_cat_test(page._chosen_cat, page._cat_sum, page)" role="form">
-            <div class="form-group">
-              <label>Input Cat sum</label>
-              <input class="form-control" type="text" value="{{ page._cat_sum }}" />
-            </div>
-          </form>
-
-
-
+            <form e-submit="page._game.submit_cat_test(page._chosen_cat, page._cat_sum, page)" role="form">
+              <div class="form-group">
+                <label>Input Cat sum</label>
+                <input class="form-control" type="text" value="{{ page._cat_sum }}" />
+              </div>
+            </form>
+          {{ else }}
+            YOU FAILED CAT TEST<br><br>
+            <a e-click="page._game.click_ok_failed_cat_test(page)" href="#">
+              OK
+            </a>
+          {{ end }}
         {{ end }}
       {{ end }}
     {{ else }}
