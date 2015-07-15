@@ -34,19 +34,15 @@ class Game < Volt::Model
   def adopt_this_cat(cat, page)
     page._taking_cat_adoption_test = true
     page._chosen_cat = cat
-    #cat_dup = cat.dup
-    #take_cat_adoption_test(cat, page)
-    # if take_cat_adoption_test(cat, page)
-    #   cat.destroy
-    #   _cats << { name: cat._name, game_id: self.id }
-    #   page._adopting_a_cat = false
-    #   page._prompt_user_for_input = true
-    # end
   end
 
-  def take_cat_adoption_test(cat, page)
-    #page._taking_cat_adoption_test = true
+  def submit_cat_test(cat, cat_sum, page)
+    _cats << { name: cat._name, game_id: self.id }
+    cat.destroy
 
+    page._taking_cat_adoption_test = false
+    page._adopting_a_cat = false
+    page._prompt_user_for_input = true
   end
 
   # def game_over
