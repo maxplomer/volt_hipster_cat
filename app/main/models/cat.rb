@@ -118,7 +118,7 @@ class Cat < Volt::Model
   ]
 
   def self.create_cats(store, city_id)
-    rand(10).times do
+  	rand(10).times do
       store._cats << {name: NAMES.sample, city_id: city_id}
     end
   end
